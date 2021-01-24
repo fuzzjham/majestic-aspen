@@ -5,8 +5,8 @@ import SEO from "../components/seo";
 import { useStaticQuery, graphql } from 'gatsby';
 import Section from 'sections/section';
 
-const NotFoundPage = () => {
-
+const NotFoundPage = (props) => {
+    const { pageContext } = props;
     const data = useStaticQuery(graphql`
         query {
             contentfulLayout(slug: {eq: "404"}) {
@@ -40,7 +40,7 @@ const NotFoundPage = () => {
     const contentModule = data.contentfulLayout.contentModule;
 
     return (
-        <Layout menus={ menus }>
+        <Layout menus={ menus } currentLocale={pageContext.node_locale}>
             <SEO title={ title } description={ description } />
             {
                 contentModule && contentModule.length > 0 &&

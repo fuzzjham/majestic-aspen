@@ -1,6 +1,8 @@
 # stackbit.yaml enables this theme to work with Stackbit Site Builder and Stackbit Studio. For more info visit https://www.stackbit.com/docs/stackbit-yaml/
 stackbitVersion: ~0.3.0
 ssgName: gatsby
+buildCommand: gatsby build
+publishDir: public
 cmsName: contentful
 import:
   type: contentful
@@ -8,6 +10,14 @@ import:
   spaceIdEnvVar: CONTENTFUL_SPACE_ID
   accessTokenEnvVar: CONTENTFUL_ACCESS_TOKEN
 models:
+  en:
+    type: page
+    singleInstance: true
+    urlPath: "/{params.locale}/"
+  es:
+    type: page
+    singleInstance: true
+    urlPath: "/{params.locale}/"
   layout:
     type: page
-    urlPath: "{slug}"
+    urlPath: "/{params.locale}/{slug}"

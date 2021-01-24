@@ -1,5 +1,3 @@
-const languages = require('./src/data/languages');
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -8,8 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Zenii`,
     description: `A One-page Gatsby starter built with Tailwindcss and  Postcss.`,
-    author: `The Bakerdev`,
-    languages
+    author: `The Bakerdev`
   },
   plugins: [
     {
@@ -20,6 +17,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-postcss",
+    "gatsby-plugin-remove-trailing-slashes",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-resolve-src",
     {
@@ -43,16 +41,17 @@ module.exports = {
         icon: `src/assets/images/favicon.png`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-i18n',
-      options: {
-        langKeyForNull: 'any',
-        langKeyDefault: languages.defaultLangKey,
-        useLangKeyLayout: false
-      }
-    },
+    'gatsby-plugin-offline',
     {
       resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        environment: process.env.CONTENTFUL_ENVIRONMENT
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful-locales`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,

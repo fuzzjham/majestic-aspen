@@ -71,17 +71,17 @@ const Footer = ({ menus }) => {
                     <ul className="flex text-sm">
                         <li className="mb-2 mr-4">
                             <a href={ data.contentfulContactDetails.facebookUrl }>
-                                <img className="w-6 h-6" src={ require('assets/images/facebook.svg') }  alt="Facebook Icon" />
+                                <img height="24" width="24" className="w-6 h-6" src={ require('assets/images/facebook.svg') }  alt="Facebook Icon" />
                             </a>
                         </li>
                         <li className="mb-2 mr-4">
                             <a href={ data.contentfulContactDetails.twitterUrl }>
-                                <img className="w-6 h-6" src={ require('assets/images/twitter.svg') } alt="Twitter Icon" />
+                                <img height="24" width="24" className="w-6 h-6" src={ require('assets/images/twitter.svg') } alt="Twitter Icon" />
                             </a>
                         </li>
                         <li className="mb-2 mr-4">
                             <a href={ data.contentfulContactDetails.instagramUrl }>
-                                <img className="w-6 h-6" src={ require('assets/images/instagram.svg') } alt="Instagram Icon" />
+                                <img height="24" width="24" className="w-6 h-6" src={ require('assets/images/instagram.svg') } alt="Instagram Icon" />
                             </a>
                         </li>
                     </ul>
