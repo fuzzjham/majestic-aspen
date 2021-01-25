@@ -11,7 +11,7 @@ class RedirectIndex extends React.PureComponent {
       const edges = args.data.allContentfulLocale.edges;
       const langs = edges.map(edge => edge.node.code);
       const langKey = getUserLangKey(langs, "en");
-      const homeUrl = withPrefix(`/${langKey}/`);
+      const homeUrl = withPrefix(`/${langKey}/`.toLowerCase());
 
       navigate(homeUrl);
     }
