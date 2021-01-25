@@ -37,7 +37,7 @@ export const query = graphql`
           ctaUrl
           image {
             fluid(quality: 100) {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -57,7 +57,7 @@ export const query = graphql`
           }
           image {
             fluid(quality: 100) {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -69,7 +69,7 @@ export const query = graphql`
           }
           image {
             fluid(quality: 100) {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -105,7 +105,7 @@ export const query = graphql`
             }
             image {
               fluid(quality: 100, maxWidth: 208, maxHeight: 146) {
-                ...GatsbyContentfulFluid
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }
@@ -125,7 +125,7 @@ export const query = graphql`
             }
             image {
               fluid(quality: 100) {
-                ...GatsbyContentfulFluid
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }
@@ -140,7 +140,7 @@ export const query = graphql`
           buttonUrl
           image {
             fluid(quality: 100) {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
